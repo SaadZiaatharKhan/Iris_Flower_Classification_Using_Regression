@@ -46,15 +46,17 @@ for i in range(4):
         feature="Petal Length (in cm)"
     elif(i==3):
         feature="Sepal Width (in cm)"
-        try:
-            user_input=float(input(f"Enter {feature} : "))
-            array_of_inputs.append(user_input)
-            array_of_inputs=np.array(array_of_inputs).reshape(1,-1)  #Converting array_of_inputs from a list to numpy array
-            # .reshape(1, -1): This reshapes the array to have one row (1) and an inferred number of columns (-1). Using -1 as one of the dimensions means that NumPy will infer the number of elements in that dimension based on the size of the original array. So, in this case, it will reshape the array to have one row and as many columns as there are elements in the original list.
-        except:
-            print("\nYou Should Have Typed Float Value Only\n".upper().center(20))
-            exit()
 
+    try:
+        user_input=float(input(f"Enter {feature} : "))
+        array_of_inputs.append(user_input)
+
+    except:
+        print("\nYou Should Have Typed Float Value Only\n".upper().center(20))
+        exit()
+
+array_of_inputs=np.array(array_of_inputs).reshape(1,-1)  #Converting array_of_inputs from a list to numpy array
+# .reshape(1, -1): This reshapes the array to have one row (1) and an inferred number of columns (-1). Using -1 as one of the dimensions means that NumPy will infer the number of elements in that dimension based on the size of the original array. So, in this case, it will reshape the array to have one row and as many columns as there are elements in the original list.
             
 #print(array_of_inputs)
 
